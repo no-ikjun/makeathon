@@ -1,3 +1,78 @@
 .container {
   background-color: rgb(205, 205, 205);
+  vertical-align: middle;
+}
+
+.upper_space {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.road {
+  background-color: rgb(35, 35, 35);
+  display: inline-block;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  vertical-align: middle;
+  position: relative;
+}
+
+.building {
+  background-color: rgb(35, 35, 35);
+  display: inline-block;
+  text-align: center;
+}
+
+.car_icon {
+  position: absolute;
+  animation: change_line 5s linear infinite;
+  z-index: 100;
+}
+
+.car_crash {
+  position: absolute;
+  z-index: 100;
+  right: 20%;
+
+  top: 50px;
+}
+
+.color_light {
+  position: absolute;
+  z-index: 100;
+  right: 40%;
+  top: 30%;
+}
+
+.road_div {
+  display: inline-block;
+  position: absolute;
+  top: calc(50% - 10px);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.road_line {
+  background-color: white;
+  height: 20px;
+}
+
+@keyframes change_line {
+  0% {
+    left: 0;
+    top: 50px;
+  }
+  40% {
+    left: 40%; /* 오른쪽으로 완전히 이동 */
+    top: 50px;
+  }
+  75% {
+    left: 65%; /* 오른쪽 끝에 고정 */
+    top: 250px; /* 아래로 이동 */
+  }
+  100% {
+    left: calc(100% - 100px); /* 오른쪽 끝에서 100px 떨어진 곳으로 이동 */
+    top: 250px; /* y 위치는 그대로 유지 */
+  }
 }
